@@ -1,0 +1,24 @@
+
+
+.HomePage {
+  --screen-width: 100vw;
+  --screen-height: 100vh;
+  
+  --nav-text-color: #ffffff;
+  --nav-height: 50px;
+  --nav-width: 320px;
+  --nav-count: 10;
+  
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background-image: linear-gradient(to right, #00610dc0, #00343d);
+  
+}
+
+.container {
+  width: var(--screen-width);
+  height: var(--screen-height);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}

@@ -1,5 +1,5 @@
 import GAListener from './components/GAListener';
-import MainLayout  from './components/Layout/MainLayout.js';
+import MainLayout from './components/Layout/MainLayout.js';
 import PageSpinner from './components/PageSpinner';
 import React from 'react';
 import componentQueries from 'react-component-queries';
@@ -7,6 +7,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './styles/reduction.scss';
 
 
+const HomePage = React.lazy(() => import('./pages/Home'));
 const DashboardPage = React.lazy(() => import('./pages/DashboardPage'));
 const TablePage = React.lazy(() => import('./pages/TablePage'));
 
@@ -18,18 +19,19 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter basename={getBasename()}>
-      <GAListener>
-        <Switch>
-          <MainLayout breakpoint={this.props.breakpoint}>
-            <React.Suspense fallback={<PageSpinner />}>
-              <Route exact path="/" component={DashboardPage} />
-              <Route exact path="/tables" component={TablePage} />
-            </React.Suspense>
-          </MainLayout>
-          <Redirect to="/" />
-        </Switch>
-      </GAListener>
-    </BrowserRouter>
+        <GAListener>
+          <Switch>
+            <MainLayout breakpoint={this.props.breakpoint}>
+              <React.Suspense fallback={<PageSpinner />}>
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/dashbord" component={DashboardPage} />
+                <Route exact path="/tables" component={TablePage} />
+              </React.Suspense>
+            </MainLayout>
+            <Redirect to="/" />
+          </Switch>
+        </GAListener>
+      </BrowserRouter>
     );
   }
 }

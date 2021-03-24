@@ -2,6 +2,7 @@ import React from 'react';
 import {
   MdBorderAll,
   MdDashboard,
+  MdHome,
 } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import {
@@ -13,7 +14,8 @@ import {
 
 
 const navItems = [
-  { to: '/', name: 'dashboard', exact: true, Icon: MdDashboard },
+  { to: '/', name: 'home', exact: true, Icon: MdHome },
+  { to: '/dashbord', name: 'dashboard', exact: true, Icon: MdDashboard },
   { to: '/tables', name: 'tables', exact: false, Icon: MdBorderAll },
 ];
 
@@ -42,7 +44,7 @@ class Sidebar extends React.Component {
         <div className='cr-sidebar__content'>
           <Navbar>
             <span className="text-white">
-                Invetory mangement 
+              INVENTORY MANAGMENT 
             </span>
           </Navbar>
           <Nav vertical>
