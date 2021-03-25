@@ -38,7 +38,7 @@ class TablePage extends React.Component {
     this.state = {
       modal: false,
       index: 0,
-      visible : false,
+      visible: false,
       dangerVisible: false,
     };
 
@@ -46,19 +46,19 @@ class TablePage extends React.Component {
   }
 
 
-  onShowAlert = ()=>{
-    this.setState({visible:true},()=>{
-      window.setTimeout(()=>{
-        this.setState({visible:false})
-      },2000)
+  onShowAlert = () => {
+    this.setState({ visible: true }, () => {
+      window.setTimeout(() => {
+        this.setState({ visible: false })
+      }, 2000)
     });
   }
 
-  onShowDangerAlert = ()=>{
-    this.setState({dangerVisible:true},()=>{
-      window.setTimeout(()=>{
-        this.setState({dangerVisible:false})
-      },2000)
+  onShowDangerAlert = () => {
+    this.setState({ dangerVisible: true }, () => {
+      window.setTimeout(() => {
+        this.setState({ dangerVisible: false })
+      }, 2000)
     });
   }
 
@@ -115,11 +115,11 @@ class TablePage extends React.Component {
         title="Tables"
         className="TablePage"
       >
-        <Alert color="success" style={{ zIndex: "1",position: 'fixed', top: '5px', width: '80%' }} isOpen={this.state.visible} >
+        <Alert color="success" style={{ zIndex: "1", position: 'fixed', top: '5px', width: '80%' }} isOpen={this.state.visible} >
           L'ajout d'un client est une fonctionnalité qui sera prochainement rajouté !
         </Alert>
 
-        <Alert color="danger" style={{ zIndex: "1",position: 'fixed', top: '5px', width: '80%' }} isOpen={this.state.dangerVisible} >
+        <Alert color="danger" style={{ zIndex: "1", position: 'fixed', top: '5px', width: '80%' }} isOpen={this.state.dangerVisible} >
           La suppression d'un client est une fonctionnalité qui sera prochainement rajouté !
         </Alert>
 
@@ -172,10 +172,10 @@ class TablePage extends React.Component {
               </ModalBody>
             </Modal>
             <Row className="d-flex justify-content-center">
-              <Button outline color="info" onClick={()=>{this.onShowAlert()}}>
+              <Button outline color="info" onClick={() => { this.onShowAlert() }}>
                 Ajouter
                 </Button>
-              <Button outline className="offset-md-1" color="danger" onClick={()=>{this.onShowDangerAlert()}}>
+              <Button outline className="offset-md-1" color="danger" onClick={() => { this.onShowDangerAlert() }}>
                 Supprimer
               </Button>
 
